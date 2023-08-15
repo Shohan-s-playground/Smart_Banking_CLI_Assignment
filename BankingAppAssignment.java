@@ -59,6 +59,7 @@ public class BankingAppAssignment {
 
                     boolean valid;
                     String acholname;
+                    int initialdepo;
                     do{
                         valid = true;
                         System.out.print("Enter Account Holder's Name: ");
@@ -78,7 +79,19 @@ public class BankingAppAssignment {
                         }
                     }while(!valid);
 
-        
+                    do{
+                        
+                        valid = true;
+                        System.out.print("Enter Initial DEposit Amount: ");
+                        initialdepo = SCANNER.nextInt();
+                        if (initialdepo<5000){
+                            System.out.printf("%sInsufficient Initial Deposit Amount:You should deposit at least RS.5000 as initial amount%s\n", COLOR_RED_BOLD, RESET);
+                            valid = false;
+                            continue;
+                        }
+                        
+                    }while(!valid);
+                            
 
 
         }
