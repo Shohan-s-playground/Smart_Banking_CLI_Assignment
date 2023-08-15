@@ -16,8 +16,9 @@ public class BankingAppAssignment {
         final String CHECK_AC_BALANCE = "Check Account Balance";
         final String DELETE_ACCOUNT= "Delete Account";
 
-        String[] name = new String[0];
+        String[] acholnames = new String[0];
         String screen = DASHBOARD;
+        String[] accid = new String[0];
 
         do {
             final String APP_TITLE = String.format("%s%s%s",
@@ -52,6 +53,30 @@ public class BankingAppAssignment {
                         default: continue;
                     }
                     break;
+
+                    case CREATE_ACCOUNT:
+                    System.out.printf("New Account ID: SDB-%06d \n", (accid.length + 1));
+
+                    boolean valid;
+                    String acholname;
+                    do{
+                        valid = true;
+                        System.out.print("Enter Account Holder's Name: ");
+                        acholname = SCANNER.nextLine().strip();
+                        if (acholname.isBlank()){
+                            System.out.printf("%sName can't be empty%s\n", COLOR_RED_BOLD, RESET);
+                            valid = false;
+                            continue;
+                        }
+                        for (int i = 0; i < acholname.length(); i++) {
+                            if (!(Character.isLetter(acholname.charAt(i)) || 
+                                Character.isSpaceChar(acholname.charAt(i))) ) {
+                                System.out.printf("%sInvalid Name Type%s\n", COLOR_RED_BOLD, RESET);
+                                valid = false;
+                                break;
+                            }
+                        }
+                    }while(!valid);
 
         
 
