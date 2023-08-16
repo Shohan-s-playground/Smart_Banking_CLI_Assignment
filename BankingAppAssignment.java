@@ -8,8 +8,8 @@ public class BankingAppAssignment {
         final String COLOR_RED_BOLD = "\033[31;1m";
         final String RESET = "\033[0m";
 
-        final String DASHBOARD = "Welcome to SMART  BANKING";
-        final String CREATE_ACCOUNT = "Create New Account";
+        final String DASHBOARD = "\u1F477 WELCOME TO SMART  BANKING";
+        final String CREATE_ACCOUNT = "\u2795 Create New Account";
         final String DEPOSIT = "Deposit";
         final String WITHDRAW = "Withdraw";
         final String TRANSFER = "Transfer";
@@ -22,13 +22,11 @@ public class BankingAppAssignment {
         String[] accids = new String[0];
 
         do {
-            final String APP_TITLE = String.format("%s%s%s",
-                                COLOR_BLUE_BOLD, screen, RESET);
+            
+            final String APP_TITLE = String.format("%s%s%s",COLOR_BLUE_BOLD, screen, RESET);
 
             System.out.println(CLEAR);
-            System.out.println("-".repeat(30));
-            System.out.println(" ".repeat((30 - APP_TITLE.length() + 7)/2).concat(APP_TITLE));
-            System.out.println("-".repeat(30));
+            System.out.println("\t" + APP_TITLE + "\n");
 
             switch(screen){
                 case DASHBOARD: 
@@ -56,7 +54,6 @@ public class BankingAppAssignment {
                     break;
 
                     case CREATE_ACCOUNT:
-                    System.out.println(CLEAR);
                     String accid = String.format("SDB-%06d", (accids.length+1));
 
                     System.out.println("New Account ID: "+accid);
